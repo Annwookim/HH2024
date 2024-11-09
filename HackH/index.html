@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Google Street View API Example</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD04wdUmPdhktcPGDyqTOpBNx9qJSE0JC4"></script>
+    <script>
+        function initStreetView() {
+            var location = { lat: 40.758896, lng: -73.985130 }; // Example: Times Square, NYC
+            var panorama = new google.maps.StreetViewPanorama(
+                document.getElementById("street-view"),
+                {
+                    position: location, //position: Sets the latitude and longitude.
+                    pov: { heading: 165, pitch: 0 }, // Sets initial angle and pitch
+                    zoom: 1,
+                }
+            );
+        }
+    </script>
+    <style>
+        /* Set a size for the panorama */
+        #street-view {
+            height: 500px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body onload="initStreetView()">
+    <div id="street-view"></div>
+</body>
+</html>
